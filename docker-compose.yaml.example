@@ -22,6 +22,6 @@ services:
         -f s16le -acodec pcm_s16le -ac 2 -i /dev/zero \
         -r 30 -f x11grab -draw_mouse 0 -s 1920x1080 -i $${DISPLAY} \
         -c:v libx264 -profile:v high -level:v 4.0 -b_strategy 2 -bf 2 -g 60 -coder ac -pix_fmt yuv420p -crf 23 -maxrate 8M -bufsize 16M \
-        -c:a aac -ac 2 -ar 48000 -b:a 384k \
+        -c:a aac -ac 2 -ar 48000 -b:a 128k \
         -f flv \
         rtmp://a.rtmp.youtube.com/live2/$${YOUTUBE_STREAM_KEY}
